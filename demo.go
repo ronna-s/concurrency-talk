@@ -1,4 +1,4 @@
-package gomaxprocs
+package demo
 
 import (
 	"sync"

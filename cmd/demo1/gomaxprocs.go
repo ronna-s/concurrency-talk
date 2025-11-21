@@ -6,7 +6,7 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/ronna-s/concurrency-talk/gomaxprocs"
+	"github.com/ronna-s/concurrency-talk"
 )
 
 func main() {
@@ -15,7 +15,7 @@ func main() {
 		iters   int
 		mode    string
 	)
-	
+
 	flag.IntVar(&workers, "workers", 400, "number of goroutines")
 	flag.IntVar(&iters, "iters", 300_000, "increments per goroutine")
 	flag.StringVar(&mode, "mode", "atomic", "atomic|mutex")
@@ -27,9 +27,9 @@ func main() {
 	start := time.Now()
 	switch mode {
 	case "atomic":
-		gomaxprocs.AtomicStorm(workers, iters)
+		demo.AtomicStorm(workers, iters)
 	case "mutex":
-		gomaxprocs.MutexStorm(workers, iters)
+		demo.MutexStorm(workers, iters)
 	default:
 		panic("unknown mode")
 	}

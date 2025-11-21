@@ -1,4 +1,4 @@
-package main
+package demo
 
 import (
 	"context"
@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-func specialCb(ctx context.Context) {
+func SpecialCb(ctx context.Context) {
 	var muA, muB sync.Mutex
 
 	done := make(chan struct{})
@@ -52,14 +52,16 @@ func specialCb(ctx context.Context) {
 	<-done
 	//fmt.Println("done")
 }
-func doConcurrently(nGoRoutines int, cb func(ctx context.Context)) {
+func DoConcurrently(nGoRoutines int, cb func(ctx context.Context)) {
 	var wg sync.WaitGroup
 	wg.Add(nGoRoutines)
 	var i uint32
 	go func() {
 		for {
 			time.Sleep(time.Second)
-			fmt.Println("> completed:", i)
+			if true {
+				fmt.Println("> completed:", i)
+			}
 		}
 	}()
 	for range nGoRoutines {
@@ -75,8 +77,4 @@ func doConcurrently(nGoRoutines int, cb func(ctx context.Context)) {
 	}
 
 	wg.Wait()
-}
-
-func main() {
-	doConcurrently(1000000, specialCb)
 }
