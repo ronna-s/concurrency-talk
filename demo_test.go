@@ -40,7 +40,7 @@ func BenchmarkStartService(b *testing.B) {
 	for range b.N {
 		wg.Go(func() {
 			payload := demo.Request{
-				Slice: make([]int, rand.Intn(10000)),
+				Slice: make([]int, rand.Intn(1000)),
 			}
 			data, _ := json.Marshal(payload)
 
