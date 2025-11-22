@@ -20,6 +20,12 @@ vs.
 GOMAXPROCS=1 go run ./cmd/demo1/gomaxprocs.go -mode=atomic
 ```
 
+## synctest
+
+```bash
+go test ./...
+```
+
 ## benchstat
 
 ```bash
