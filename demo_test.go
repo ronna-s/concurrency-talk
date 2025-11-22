@@ -3,6 +3,7 @@ package demo_test
 import (
 	"bytes"
 	"encoding/json"
+	"math/rand"
 	"net/http"
 	"net/http/httptest"
 	"runtime"
@@ -38,7 +39,9 @@ func BenchmarkStartService(b *testing.B) {
 	var wg sync.WaitGroup
 	for range b.N {
 		wg.Go(func() {
-			var payload demo.Request
+			payload := demo.Request{
+				Slice: make([]int, rand.Intn(10000)),
+			}
 			data, _ := json.Marshal(payload)
 
 			req, err := http.NewRequest("POST", "http://127.0.0.1:8080/demo", bytes.NewBuffer(data))
