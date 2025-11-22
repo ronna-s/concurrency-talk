@@ -25,10 +25,10 @@ GOMAXPROCS=1 go run ./cmd/demo1/gomaxprocs.go -mode=atomic
 ```bash
 go install golang.org/x/perf/cmd/benchstat@latest
 
-go test -run='^$' -bench=BenchmarkStartService -benchtime=10000x  -count=10 > current.txt
+go test -run='^$' -bench=BenchmarkStartService -benchtime=10000x  -count=10 > gccurrent.txt
 
-GOEXPERIMENT=greenteagc go test -run='^$' -bench=BenchmarkStartService -benchtime=10000x  -count=10 > greentea.txt
+GOEXPERIMENT=greenteagc go test -run='^$' -bench=BenchmarkStartService -benchtime=10000x  -count=10 > gcgreentea.txt
 
-benchstat current.txt greentea.txt 
+benchstat gccurrent.txt gcgreentea.txt 
 ```
 
