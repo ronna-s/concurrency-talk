@@ -1,4 +1,4 @@
-# Demystifying Go’s Concurrency and Performance (GDG Golang, Nov, 2025)
+# Demystifying Go’s Concurrency and Performance (Nov, 2025)
 
 ## Max CPUs
 ### Mutexes Demo
