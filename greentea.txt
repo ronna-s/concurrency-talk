@@ -1,0 +1,16 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/ronna-s/concurrency-talk
+cpu: Apple M1
+BenchmarkStartService-8   	   10000	      5316 ns/op
+BenchmarkStartService-8   	   10000	      3893 ns/op
+BenchmarkStartService-8   	   10000	      3420 ns/op
+BenchmarkStartService-8   	   10000	      3630 ns/op
+BenchmarkStartService-8   	   10000	      3674 ns/op
+BenchmarkStartService-8   	   10000	      3385 ns/op
+BenchmarkStartService-8   	   10000	      3509 ns/op
+BenchmarkStartService-8   	   10000	      3434 ns/op
+BenchmarkStartService-8   	   10000	      3518 ns/op
+BenchmarkStartService-8   	   10000	      3350 ns/op
+PASS
+ok  	github.com/ronna-s/concurrency-talk	0.745s
